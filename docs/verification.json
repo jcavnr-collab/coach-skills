@@ -1,25 +1,63 @@
 {
   "version": "0.9.0",
-  "guide_revision": "2026-10-26 general coach guide",
+  "guide_revision": "2026-10-26 first-time Desktop and agent-led workspace setup",
   "skill_count": 23,
   "documented_skill_count": 22,
   "all_skills_documented": false,
   "omitted_skills": [
     "skills-video-cut"
   ],
-  "guide_pages": 6,
-  "guide_page_review": "All six final PDF pages visually inspected. Purpose and example for each of 22 skills; no split entries or clipped commands.",
+  "guide_pages": 7,
+  "guide_page_review": "All seven final PDF pages visually inspected. Desktop download, local folder, repository and CLI installation, fresh session, memory and handoffs precede 22 skill descriptions; no split entries or clipped commands.",
   "mobile_width": 390,
   "mobile_horizontal_overflow": false,
-  "mobile_review": "Cover and lesson/article sections visually inspected at 390px.",
+  "mobile_review": "Cover, setup prompt, workspace table and lesson/article section visually inspected at 390px.",
   "font_embedding": "Outfit embedded; font license notice preserved.",
   "privacy_scan": "passed",
   "command_names_match_package": true,
-  "guide_scope": "General coach reference including blog-author; video and broader marketing workflows omitted.",
+  "guide_scope": "General coach reference including blog-author; complete first-time Desktop setup. Video and broader marketing workflows omitted.",
   "files": {
-    "coach-skills-guide.md": "3182a38de8745e712396a3e477f527e1b744571d9afc81ab30999426ef96be9e",
-    "Coach Skills Guide (Rincon AI).html": "c9394b4cbaedc58e20bac5aaed9eb54e34545ab1256f1f5ef1673b0205b69de1",
-    "Coach Skills Guide (Rincon AI).pdf": "f5f918073b5e1e735b5393de0ee3c72833c898fd025f3c87d16c495519c80fe8"
+    "coach-skills-guide.md": "aaf90c654422d34b7005c11866e1463a1112fad1275527a7263a38f852c43c74",
+    "agent-setup.md": "ac55c9245d66b1b01f8bb9e1fea563bbb291e8f2ac2ecce0e7d5c8384467b97b",
+    "Coach Skills Guide (Rincon AI).html": "6fabb4f1af7f09322c8ddc060cf2ec30c939a1ab121c3b963faf03030ac4e3e1",
+    "Coach Skills Guide (Rincon AI).pdf": "5bbf12a8c8e97d5311adc29726df889613aac917eeff614b963bfa78d48686b6"
   },
-  "unchanged": "Skill instructions, package manifests, Cinch renderer and sample artifacts are unchanged."
+  "unchanged": "Skill instructions, package manifests, Cinch renderer and sample artifacts are unchanged.",
+  "agent_installation": {
+    "cliVersion": "2.1.257 (Claude Code)",
+    "tests": [
+      {
+        "download": "git",
+        "registeredSource": "./coach-skills",
+        "sourceCommit": "0b98221753e029e75f94b86e544e805990c686c8",
+        "repositoryFiles": 67,
+        "completeRepositoryVerified": true,
+        "pluginId": "cinch-coach@coach-skills",
+        "pluginVersion": "0.9.0",
+        "scope": "user",
+        "enabled": true,
+        "skillCount": 23,
+        "mcpServerCount": 2,
+        "existingWorkspaceMemoryPreserved": true
+      },
+      {
+        "download": "zip",
+        "registeredSource": "./coach-skills",
+        "sourceCommit": "0b98221753e029e75f94b86e544e805990c686c8",
+        "repositoryFiles": 67,
+        "completeRepositoryVerified": true,
+        "pluginId": "cinch-coach@coach-skills",
+        "pluginVersion": "0.9.0",
+        "scope": "user",
+        "enabled": true,
+        "skillCount": 23,
+        "mcpServerCount": 2,
+        "existingWorkspaceMemoryPreserved": true
+      }
+    ],
+    "oauthTested": false,
+    "interactiveSessionLoadTested": false,
+    "cliFreshInstallTested": false,
+    "hostPluginSettingsUnchanged": true
+  }
 }
