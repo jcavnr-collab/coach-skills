@@ -4,7 +4,7 @@
 
 Agent handoffs, process diagrams, and Cinch white papers work with local files. Coaching, email and lesson workflows require your own authorized CinchOS account and the relevant connections. Downloading this package does not grant service access.
 
-Read the [Coach Skills how-to guide](docs/coach-skills-guide.md), [download the illustrated PDF](docs/Coach%20Skills%20Guide%20%28Rincon%20AI%29.pdf), or download the [self-contained HTML](docs/Coach%20Skills%20Guide%20%28Rincon%20AI%29.html) for offline reading. The guide covers setup, examples for every skill, handoffs, and troubleshooting.
+Read the [Coach Skills how-to guide](docs/coach-skills-guide.md), [download the illustrated PDF](docs/Coach%20Skills%20Guide%20%28Rincon%20AI%29.pdf), or download the [self-contained HTML](docs/Coach%20Skills%20Guide%20%28Rincon%20AI%29.html) for offline reading. The concise guide describes 22 coaching, lesson, article, assistant and document skills, with a purpose and example for each. It includes setup and handoffs for any coach using the package.
 
 ## Install
 
