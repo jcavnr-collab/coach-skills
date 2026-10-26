@@ -1,0 +1,30 @@
+{
+  "upstream_commit": "e7db6ca603fd4862010383ff17ffd6cc4ffac1c0",
+  "files": [
+    {
+      "file": "Epilogue.ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/epilogue/Epilogue%5Bwght%5D.ttf",
+      "sha256": "012f651b45f47c10c7714cb7e3f2f7d9ccb7f235a2cc72c6b273ddc735705c67"
+    },
+    {
+      "file": "Epilogue-OFL.txt",
+      "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/epilogue/OFL.txt",
+      "sha256": "95ebd6a2e4035b8398c83928fb85297b48441f27f405398c29b59aae899fc747"
+    },
+    {
+      "file": "OpenSans.ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/opensans/OpenSans%5Bwdth%2Cwght%5D.ttf",
+      "sha256": "36643644f318a812aab2d2ed3bb98f8cf0872527f835fe9398d95fe6b9adb878"
+    },
+    {
+      "file": "OpenSans-Italic.ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/opensans/OpenSans-Italic%5Bwdth%2Cwght%5D.ttf",
+      "sha256": "fe269381e992f32e135801740998544d6235061e37c93ec067ad2be3edd5b17b"
+    },
+    {
+      "file": "OpenSans-OFL.txt",
+      "url": "https://raw.githubusercontent.com/google/fonts/e7db6ca603fd4862010383ff17ffd6cc4ffac1c0/ofl/opensans/OFL.txt",
+      "sha256": "fbbbcfef55318de350562559b671360de6d597112ecc5c73881b05092db89602"
+    }
+  ]
+}
