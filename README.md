@@ -1,8 +1,10 @@
 # Coach Skills
 
-21 skills for Claude Code, maintained by Rincon AI. Install the public cinch-coach plugin without a GitHub invitation.
+22 skills for Claude Code, maintained by Rincon AI. Install the public cinch-coach plugin without a GitHub invitation.
 
-Agent handoffs and process diagrams work with local files. Coaching, email and lesson workflows require your own authorized CinchOS account and the relevant connections. Downloading this package does not grant service access.
+Agent handoffs, process diagrams, and Cinch white papers work with local files. Coaching, email and lesson workflows require your own authorized CinchOS account and the relevant connections. Downloading this package does not grant service access.
+
+Read the [Coach Skills how-to guide](docs/coach-skills-guide.md), [download the illustrated PDF](docs/Coach%20Skills%20Guide%20%28Rincon%20AI%29.pdf), or download the [self-contained HTML](docs/Coach%20Skills%20Guide%20%28Rincon%20AI%29.html) for offline reading. The guide covers setup, examples for every skill, handoffs, and troubleshooting.
 
 ## Install
 
@@ -42,6 +44,7 @@ Already using another cinch-coach installation? Disable the older copy through /
 | reboot-agent | Move the same assistant into a fresh chat with a verified brief | Local files |
 | offboard-agent | Retire an assistant while preserving unfinished work | Local files |
 | excalidraw-process-flow-diagram | Create editable process diagrams and PNG/SVG previews | Local renderer setup |
+| cinch-whitepaper | Create Cinch-branded white papers and how-to guides as HTML and PDF | Local renderer setup |
 | cinchos-guide | Find the right service tools and understand their permissions | CinchOS |
 | sunday-prep | Review the roster before your chosen weekly planning day | CinchOS |
 | quarter-plan | Design and publish quarter masters | CinchOS plan-editor access |
@@ -99,6 +102,16 @@ The skill includes a fictional sample, editable Excalidraw source, and a rendere
 
 ![Fictional process example](plugins/cinch-coach/skills/excalidraw-process-flow-diagram/assets/sample-process.png)
 
+## Cinch white papers
+
+~~~text
+/cinch-coach:cinch-whitepaper Turn my attached notes into a Cinch coaching guide. Keep the facts intact and save the Markdown, HTML, PDF, and page previews in my work folder.
+~~~
+
+The skill uses Cinch's ink blue, amber, and teal, with bundled Epilogue and Open Sans fonts. It creates a self-contained HTML file and a Letter PDF, with a PNG of every PDF page for inspection. Follow its [first-use setup](plugins/cinch-coach/skills/cinch-whitepaper/references/setup.md). It needs uv and a local browser; it does not need a paid design service or a voice account. Contact details and a next-step link are optional and supplied for each paper.
+
+See the [two-page fictional sample](docs/examples/cinch-whitepaper-sample.pdf) and its [editable Markdown](plugins/cinch-coach/skills/cinch-whitepaper/assets/sample.md).
+
 ## Optional video services
 
 The video-cut skill uses Descript when that connector is available to you. It requires your own account and credits.
@@ -113,12 +126,12 @@ Then use /mcp to sign in. This optional connection does not change the Descript 
 
 ## Updates and downloads
 
-Use /plugin to update the coach-skills marketplace and cinch-coach plugin, then follow the reload prompt. The initial public edition is 0.7.0.
+Use /plugin to update the coach-skills marketplace and cinch-coach plugin, then follow the reload prompt. Edition 0.8.0 adds the Cinch whitepaper skill and the illustrated how-to guide.
 
-A [versioned ZIP](https://github.com/jcavnr-collab/coach-skills/releases/latest) is also available. Extract it, add the extracted folder as a local marketplace with /plugin marketplace add /absolute/path/to/coach-skills-0.7.0, and install cinch-coach@coach-skills.
+A [versioned ZIP](https://github.com/jcavnr-collab/coach-skills/releases/latest) is also available. Extract it, add the extracted folder as a local marketplace with /plugin marketplace add /absolute/path/to/coach-skills-0.8.0, and install cinch-coach@coach-skills.
 
 ## Reuse and contributions
 
-The package is [MIT licensed](LICENSE). Keep the license notice when sharing or adapting it. Downloaded runtime dependencies have their own [licenses](THIRD_PARTY_NOTICES.md). This license grants no access to hosted services or ownership of service brands.
+The package's original instructions and code are [MIT licensed](LICENSE). Keep the license notice when sharing or adapting them. Bundled fonts, brand artwork, and downloaded runtime dependencies have their own [notices](THIRD_PARTY_NOTICES.md). This license grants no access to hosted services or ownership of service brands.
 
 Everyone can read, download and fork this repository. Maintainers control changes to the published package. Submit improvements through pull requests with fictional examples; keep athlete records, credentials and personal agent briefs in your own work folder.

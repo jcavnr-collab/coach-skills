@@ -1,0 +1,26 @@
+{
+  "version": "0.8.0",
+  "skill_count": 22,
+  "all_skills_documented": true,
+  "guide_pages": 12,
+  "guide_page_review": "All 12 inspected; unchanged final pages verified byte-identical to inspected captures.",
+  "cinch_sample_pages": 2,
+  "cinch_sample_page_review": "Both inspected.",
+  "mobile_width": 390,
+  "mobile_horizontal_overflow": false,
+  "font_embedding": "Epilogue/Open Sans in Cinch HTML; Outfit in Rincon HTML; license notices included.",
+  "renderer_checks": [
+    "Long table spans pages with repeated headings",
+    "Five-to-one image preserved",
+    "Long link wraps",
+    "Code preserves literal pagebreak marker",
+    "Raw HTML displayed as text",
+    "Remote/outside/missing images rejected"
+  ],
+  "privacy_scan": "passed",
+  "files": {
+    "coach-skills-guide.md": "2b27e4b73ad148690c1a71ebcf94b11651c701b191a0a518c9a682bb99cb981a",
+    "Coach Skills Guide (Rincon AI).html": "069245dffb40d4ac6a142c313dce6a409c049bd724f44b51aebdcb930d9014a0",
+    "Coach Skills Guide (Rincon AI).pdf": "5eb449158ea9bc557082b255ba9ded5209ad26b507f5d278a77af56adf7ab480"
+  }
+}
