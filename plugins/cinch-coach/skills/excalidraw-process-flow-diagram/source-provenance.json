@@ -1,0 +1,25 @@
+{
+  "edition": "Public process flow diagram",
+  "version": "0.7.0",
+  "date": "2026-10-26",
+  "license": "MIT",
+  "maintainer": "Rincon AI",
+  "implementation": "Public renderer and guidance authored against documented Excalidraw export and restore APIs.",
+  "sample": "Fictional lesson-production process; no accounts or client records.",
+  "apiReferences": [
+    "https://docs.excalidraw.com/docs/@excalidraw/excalidraw/api/utils/export",
+    "https://docs.excalidraw.com/docs/@excalidraw/excalidraw/api/utils/restore"
+  ],
+  "sha256": {
+    "SKILL.md": "3fd0f29b2d7797dc37339cb8f973f85a09bf92f0788e69dc32fb09afa419fa15",
+    "assets/sample-process.excalidraw": "2def650bf8b4986bb716b2c0d4eb581696b4e1f6e333b38191700253220ce9a0",
+    "assets/sample-process.png": "902685e918610e894feef17fa849b0a1d0fb50fd8ede1f9af9f52f5822a672bb",
+    "references/architecture.md": "759fe27bb675248a6601dc0b62f02eb5754ac82ba55d8181f039d1a83da24e75",
+    "references/rendering.md": "063943ea68aa5e123180062e55bb9afc1958758d1c63f5b92e57dad2c900e6b9",
+    "references/setup.md": "23bc8f56abb4d0e5ed046d4d74b06170cafaf585ad37d75ba677be8bfabdc4d1",
+    "references/style.md": "75753f444f5fbc3cbe040d2e8cca9c45518992d5b5fdafbf522ed4d8b394040e",
+    "scripts/render.py": "904e8c8bcff02acab26b36ac350af9d45f6266c977439dc13e7df7b63bbf8677",
+    "scripts/render_template.html": "13a3bf871c4cca41fe3d224c62e1de1982cf7d9187565d0e0a37caa1759459e5"
+  },
+  "updatePolicy": "Review public content, rerun native rendering and editor import checks, and refresh these hashes when changing the bundled resources."
+}

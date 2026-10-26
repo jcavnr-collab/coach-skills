@@ -1,0 +1,10 @@
+{
+  "name": "cinch-coach",
+  "version": "0.7.0",
+  "description": "Cinch Cycling's coaching assistant for Claude Code, backed by the CinchOS MCP.",
+  "author": {
+    "name": "Rincon AI"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/jcavnr-collab/coach-skills"
+}

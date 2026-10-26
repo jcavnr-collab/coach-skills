@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Local process diagram export</title>
+<!-- SPDX-License-Identifier: MIT -->
+<style>
+  html, body { margin: 0; padding: 0; background: white; }
+  #preview { display: inline-block; vertical-align: top; }
+  #preview svg { display: block; }
+</style>
+<main id="preview"></main>
+<script type="module">
+  try {
+    const api = await import("https://esm.sh/@excalidraw/excalidraw@0.18.0?bundle");
+    window.exportCoachScene = async ({scene, repair, maxWidth}) => {
+      let elements = scene.elements;
+      const appState = {
+        ...scene.appState,
+        viewBackgroundColor: scene.appState?.viewBackgroundColor || "#ffffff",
+        exportBackground: true,
+        exportWithDarkMode: false,
+      };
+      const host = document.querySelector("#preview");
+      const exportSvg = () => api.exportToSvg({
+        elements, appState, files: scene.files || {}, exportPadding: 24,
+      });
+      // Load the scene's fonts before asking the native API to measure text.
+      host.replaceChildren(await exportSvg());
+      await document.fonts.ready;
+      if (repair) {
+        elements = api.restoreElements(elements, null, {
+          refreshDimensions: true, repairBindings: true,
+        });
+        const owners = new Map(elements.map(item => [item.id, item]));
+        for (const label of elements.filter(item => item.type === "text")) {
+          const owner = owners.get(label.containerId);
+          if (!owner || !["rectangle", "ellipse", "diamond"].includes(owner.type)) continue;
+          if (label.textAlign === "center") {
+            label.x = owner.x + (owner.width - label.width) / 2;
+          }
+          if (label.verticalAlign === "middle") {
+            label.y = owner.y + (owner.height - label.height) / 2;
+          }
+        }
+      }
+      const svg = await exportSvg();
+      host.replaceChildren(svg);
+      await document.fonts.ready;
+      const naturalWidth = Number(svg.getAttribute("width"));
+      const naturalHeight = Number(svg.getAttribute("height"));
+      if (!(naturalWidth > 0 && naturalHeight > 0)) {
+        throw new Error("Excalidraw returned invalid export dimensions.");
+      }
+      const xml = new XMLSerializer().serializeToString(svg);
+      const ratio = Math.min(1, maxWidth / naturalWidth);
+      svg.setAttribute("width", String(naturalWidth * ratio));
+      svg.setAttribute("height", String(naturalHeight * ratio));
+      await new Promise(requestAnimationFrame);
+      return {
+        svg: xml,
+        scene: {...scene, elements},
+      };
+    };
+    window.coachReady = true;
+  } catch (error) {
+    window.coachLoadError = String(error);
+  }
+</script>
+</html>

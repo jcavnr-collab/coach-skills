@@ -1,0 +1,19 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "coach-skills",
+  "description": "Public coaching skills for Claude Code: CinchOS workflows, local agents, and process diagrams.",
+  "owner": {
+    "name": "Rincon AI"
+  },
+  "plugins": [
+    {
+      "name": "cinch-coach",
+      "description": "Cinch Cycling's coaching assistant: Sunday prep, coaching comments, prospects, inbox triage, skills and playbooks, text-only agent handoffs, and editable process flow diagrams. Connects to CinchOS through its MCP.",
+      "author": {
+        "name": "Rincon AI"
+      },
+      "category": "productivity",
+      "source": "./plugins/cinch-coach"
+    }
+  ]
+}

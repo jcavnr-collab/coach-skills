@@ -1,0 +1,10 @@
+{
+  "cinchos-coaching": {
+    "type": "http",
+    "url": "https://os.cinchcycling.com/api/mcp/coaching"
+  },
+  "cinchos-inbox": {
+    "type": "http",
+    "url": "https://os.cinchcycling.com/api/mcp/inbox"
+  }
+}
