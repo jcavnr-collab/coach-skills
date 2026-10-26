@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "cinch-coach",
-      "description": "Cinch Cycling's coaching assistant: Sunday prep, coaching comments, prospects, inbox triage, skills and playbooks, text-only agent handoffs, editable process flow diagrams, and branded white papers. Connects to CinchOS through its MCP.",
+      "description": "Cinch Cycling's coaching assistant: Sunday prep, coaching comments, prospects, inbox triage, skills, playbooks and blog authoring, text-only agent handoffs, editable process flow diagrams, and branded white papers. Connects to CinchOS through its MCP.",
       "author": {
         "name": "Rincon AI"
       },

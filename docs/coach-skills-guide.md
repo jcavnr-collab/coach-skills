@@ -1,6 +1,6 @@
 # Coach Skills: a practical guide
 ### Set up Claude, prepare your coaching week, and carry the work into your next session
-*Rincon AI · Guide to cinch-coach 0.8.0 · October 26, 2026*
+*Rincon AI · Guide to cinch-coach 0.9.0 · October 26, 2026*
 
 ## Start with one useful job
 
@@ -8,7 +8,7 @@ Coach Skills gives Claude a repeatable way to help with your coaching work. Inst
 
 Start with a weekly planning review. It gives you a short list of open weeks, upcoming races, missed sessions and comments waiting for a reply. Then choose one athlete to work on.
 
-The package contains 22 skills. Some use local files, such as agent handoffs, process diagrams and Cinch white papers. Coaching and email workflows use your authorized CinchOS connections. Video editing has its own optional connection.
+The package contains 23 skills. Some use local files, such as agent handoffs, process diagrams and Cinch white papers. Coaching and email workflows use your authorized CinchOS connections. Video editing has its own optional connection.
 
 Two uses of the word **skill** appear in this guide. A **Coach Skill** is an instruction for Claude, such as `athlete-week`. A **Skills Studio lesson** is teaching material for an athlete, such as a cornering drill. The `skill-author` workflow helps you create that teaching material.
 
@@ -43,7 +43,7 @@ Run `/mcp`. The plugin supplies two CinchOS connections:
 
 | Connection | What you use it for |
 |---|---|
-| `cinchos-coaching` | Athletes, plans, TrainingPeaks, coaching comments and Skills Studio lessons |
+| `cinchos-coaching` | Athletes, plans, TrainingPeaks, coaching comments, lessons and blog articles |
 | `cinchos-inbox` | Connected email, calendar, consult invitations and reports |
 
 Sign into each connection you need with your own CinchOS account. Your workspace membership and connected TrainingPeaks account determine which actions are available. An owner can see a wider roster; the assistant still needs your confirmed coach assignments when you ask for “my athletes.”
@@ -236,6 +236,37 @@ The lesson tools use the existing `cinchos-coaching` connection. A separate Skil
 
 Video upload, media review and publication happen in Studio. A text draft can be saved while its video remains unfinished.
 
+### Write and publish a blog article
+
+```text
+/cinch-coach:blog-author Turn my notes on [topic] into a
+Training Tips article for [audience]. Show the draft, help
+me add a photo, and save it after I approve the text.
+```
+
+Any active coach with blog access can write and submit their own articles.
+Claude uses your material and Cinch's knowledge, checks the byline and audience,
+then returns the saved draft's desk link. Choose Everyone for a public post;
+Community and Athletes keep their existing access rules. A draft save does not
+publish it.
+
+Supply a public JPG, PNG or WebP image URL, attach a readable photo, reuse an
+existing article image, or upload through the desk. Images must be 5 MB or
+smaller. Large attachments may need the URL or desk path. Upload hosted videos
+through the desk, then ask Claude to read the article again.
+
+Run the readiness check and resolve any missing items. Coaches submit for
+review. Owners, office managers and super admins can publish: Claude shows an
+exact preview of the article, audience, address and action, then waits for your
+confirmation before making the public change. If the article changes, review a
+fresh preview. The same process protects withdrawal, republication and address
+changes. Changing an address redirects the old link.
+
+Ask for the saved state and public URL after publication. The public page may
+lag by about a minute because of caching. If the connected server lacks the
+blog tools, Claude can prepare a clearly labeled local draft; it cannot claim
+that draft was saved or published in CinchOS.
+
 ### Assemble a playbook
 
 ```text
@@ -244,7 +275,7 @@ Video upload, media review and publication happen in Studio. A text draft can be
 Studio links and gaps we need to fill.
 ```
 
-In version 0.8.0, this produces an ordered assembly handoff in `Skill drafts` inside your work folder. Assemble and publish the playbook in Skills Studio. The handoff identifies published lessons and draft dependencies separately.
+This workflow produces an ordered assembly handoff in `Skill drafts` inside your work folder. Assemble and publish the playbook in Skills Studio. The handoff identifies published lessons and draft dependencies separately.
 
 Playbook authoring through MCP is not part of this edition's documented workflow. If your deployment adds those tools later, have the assistant inspect the available operations before claiming it saved a Studio playbook.
 
@@ -381,6 +412,7 @@ Every command begins with `/cinch-coach:`. Add the skill name below and describe
 | `prospect-invite` | Prepare a personal consult invitation and times |
 | `consult-report` | Draft and finalize an athlete report |
 | `skill-author` | Create or revise a Skills Studio lesson draft |
+| `blog-author` | Draft, submit and confirm publication of blog articles |
 | `playbook-author` | Organize lessons into a playbook assembly handoff |
 | `skills-video-cut` | Prepare a teaching-video rough cut through Descript |
 | `onboard-agent` | Start or resume a named assistant |
@@ -409,6 +441,6 @@ To update the package, open `/plugin`, update the `coach-skills` marketplace and
 
 The [release downloads](https://github.com/jcavnr-collab/coach-skills/releases/latest) provide a versioned ZIP. For a local installation, extract it and add that extracted folder as the marketplace, then install `cinch-coach@coach-skills`.
 
-This guide describes the published 0.8.0 package. Connected services can change independently. When a live tool differs from the guide, keep the actual result and report the mismatch so the instructions can be updated.
+This guide describes the 0.9.0 package. Connected services can change independently. When a live tool differs from the guide, keep the actual result and report the mismatch so the instructions can be updated.
 
 For your first session, finish setup, run the planning review, and preview one athlete's week. Save an agent checkpoint before you leave. That gives the next session a concrete place to begin.

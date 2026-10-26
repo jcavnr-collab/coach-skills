@@ -1,6 +1,6 @@
 # Coach Skills
 
-22 skills for Claude Code, maintained by Rincon AI. Install the public cinch-coach plugin without a GitHub invitation.
+23 skills for Claude Code, maintained by Rincon AI. Install the public cinch-coach plugin without a GitHub invitation.
 
 Agent handoffs, process diagrams, and Cinch white papers work with local files. Coaching, email and lesson workflows require your own authorized CinchOS account and the relevant connections. Downloading this package does not grant service access.
 
@@ -58,6 +58,7 @@ Already using another cinch-coach installation? Disable the older copy through /
 | inbox-triage | Read mail and draft replies in the conversation | CinchOS inbox |
 | email-drafts | Review and send approved email replies | CinchOS inbox |
 | skill-author | Create and revise lesson drafts in Skills Studio | CinchOS Skills Studio access |
+| blog-author | Draft, submit and, with publisher permission and confirmation, publish blog articles | CinchOS blog access |
 | playbook-author | Plan a playbook from the lesson catalog | CinchOS; manual Studio assembly |
 | skills-video-cut | Prepare a rough cut for review | Optional Descript connector |
 
@@ -77,6 +78,21 @@ Run /mcp in Claude Code and sign into each needed connection with your own Cinch
 Skills Studio uses the coaching connection. Its lesson tools are list_skills, get_skill, create_skill_draft and update_skill_draft. Reading requires trainingpeaks:read; draft writes require coaching:draft and active workspace access. Reconnecting cannot grant missing membership. The agent shows the proposed lesson before saving, reads it back, and returns its Studio link. Publication remains a manual Studio action.
 
 The playbook workflow provides an assembly handoff. It does not claim to save a playbook through lesson tools. If your deployment adds playbook tools, inspect their actual contracts before using them.
+
+## Blog articles
+
+~~~text
+/cinch-coach:blog-author Turn these notes into a Training Tips article.
+Show me the draft and help me choose a photo before saving it.
+~~~
+
+Any active coach with blog access can author and submit their own drafts.
+Owners, office managers and super admins can publish after seeing and confirming
+an exact preview. The workflow also supports revisions, review, withdrawal,
+republication and address changes. Images can come from a public URL, a readable
+attachment, an existing article, or a desk upload. Hosted video uploads stay on
+the desk. The connected server must expose the blog tools; the skill clearly
+labels local drafts when it does not.
 
 ## Local agents and handoffs
 
@@ -126,7 +142,7 @@ Then use /mcp to sign in. This optional connection does not change the Descript 
 
 ## Updates and downloads
 
-Use /plugin to update the coach-skills marketplace and cinch-coach plugin, then follow the reload prompt. Edition 0.8.0 adds the Cinch whitepaper skill and the illustrated how-to guide.
+Use /plugin to update the coach-skills marketplace and cinch-coach plugin, then follow the reload prompt. Edition 0.9.0 adds blog authoring, review, image imports and confirmed publication through the coaching connection.
 
 A [versioned ZIP](https://github.com/jcavnr-collab/coach-skills/releases/latest) is also available. Extract it, add the extracted folder as a local marketplace with /plugin marketplace add /absolute/path/to/coach-skills-0.8.0, and install cinch-coach@coach-skills.
 
