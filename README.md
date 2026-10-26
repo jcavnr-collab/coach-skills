@@ -144,7 +144,7 @@ Then use /mcp to sign in. This optional connection does not change the Descript 
 
 Use /plugin to update the coach-skills marketplace and cinch-coach plugin, then follow the reload prompt. Edition 0.9.0 adds blog authoring, review, image imports and confirmed publication through the coaching connection.
 
-A [versioned ZIP](https://github.com/jcavnr-collab/coach-skills/releases/latest) is also available. Extract it, add the extracted folder as a local marketplace with /plugin marketplace add /absolute/path/to/coach-skills-0.8.0, and install cinch-coach@coach-skills.
+A [versioned ZIP](https://github.com/jcavnr-collab/coach-skills/releases/latest) is also available. Extract it, add the extracted folder as a local marketplace with /plugin marketplace add /absolute/path/to/coach-skills-0.9.0, and install cinch-coach@coach-skills.
 
 ## Reuse and contributions
 
