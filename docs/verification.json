@@ -1,9 +1,9 @@
 {
-  "version": "0.8.0",
-  "skill_count": 22,
+  "version": "0.9.0",
+  "skill_count": 23,
   "all_skills_documented": true,
-  "guide_pages": 12,
-  "guide_page_review": "All 12 inspected; unchanged final pages verified byte-identical to inspected captures.",
+  "guide_pages": 13,
+  "guide_page_review": "All 13 pages inspected. After final copy edits pages 2 and 7 were reinspected; the other 11 previews were byte-identical to inspected captures.",
   "cinch_sample_pages": 2,
   "cinch_sample_page_review": "Both inspected.",
   "mobile_width": 390,
@@ -19,8 +19,14 @@
   ],
   "privacy_scan": "passed",
   "files": {
-    "coach-skills-guide.md": "2b27e4b73ad148690c1a71ebcf94b11651c701b191a0a518c9a682bb99cb981a",
-    "Coach Skills Guide (Rincon AI).html": "069245dffb40d4ac6a142c313dce6a409c049bd724f44b51aebdcb930d9014a0",
-    "Coach Skills Guide (Rincon AI).pdf": "5eb449158ea9bc557082b255ba9ded5209ad26b507f5d278a77af56adf7ab480"
+    "coach-skills-guide.md": "308e971562ba6fa136e3922f53fe21738329b5e86709e018c2c8d7aebfb36d75",
+    "Coach Skills Guide (Rincon AI).html": "e043c9ff811e575b4f501f53a9a31846b2efeb8a9b16d1b2105e9f1524c740f9",
+    "Coach Skills Guide (Rincon AI).pdf": "7ea293f1eb399806ab934a89f030ab9a84efe85b5e05cc4a71980bd4663ce863"
+  },
+  "blog_author_validation": {
+    "frontmatter": "passed",
+    "renderer_unit_tests": 7,
+    "mobile_blog_capture": "inspected at 390 by 844",
+    "server_tools": "requires deployment of the matching CinchOS blog MCP tools; skill handles missing tools explicitly"
   }
 }

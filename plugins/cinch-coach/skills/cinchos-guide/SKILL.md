@@ -7,14 +7,14 @@ description: How to use the two CinchOS connections (cinchos-coaching and cincho
 
 CinchOS is Cinch Cycling's operating system. Claude reaches it through two connections, both signed in as the coach using Claude:
 
-- **cinchos-coaching**: athletes, TrainingPeaks, coaching comments, nudges, leads and onboarding, plans and quarters, Workout Zones, Skills Studio drafts, knowledge and voice.
+- **cinchos-coaching**: athletes, TrainingPeaks, coaching comments, nudges, leads and onboarding, plans and quarters, Workout Zones, Skills Studio drafts, blog articles, knowledge and voice.
 - **cinchos-inbox**: email, calendar, consult invites and booking, Roadmap and To The Moon reports, Today's Priorities, Community join requests, support requests.
 
 The other skills in this plugin handle whole workflows. This guide is the map behind them.
 
 ## Rules every session follows
 
-1. **Preview, then confirm when the tool supports it.** For tools with a `confirm` argument, show the returned preview and call again with `confirm: true` only after a clear yes for exactly what was shown. One yes covers one preview. **Skills Studio draft exception:** `create_skill_draft` and `update_skill_draft` save immediately and do not accept `confirm` or a preview flag. Show the proposed lesson/edit in the conversation and get the coach's OK before that one draft write. Publishing always stays in Skills Studio.
+1. **Preview, then confirm when the tool supports it.** For tools with a `confirm` argument, show the returned preview and call again with `confirm: true` only after a clear yes for exactly what was shown. One yes covers one preview. **Skills Studio draft exception:** `create_skill_draft` and `update_skill_draft` save immediately and do not accept `confirm` or a preview flag. Show the proposed lesson/edit in the conversation and get the coach's OK before that one draft write. Lesson publishing stays in Skills Studio. Blog publication has its own preview-confirm workflow below.
 2. **Own athletes only.** Writes for an athlete (zones, weeks, plans, races, thresholds) only work when the athlete's coach is one of the caller's own addresses: their sign-in, or the TrainingPeaks coach account they connected. Anyone else answers "not found".
    - Owners and office managers *see* every athlete in `list_my_athletes`, but the write rule still applies to them.
    - When the coach says "my athletes", filter by `coachEmail`. Use only this coach's confirmed sign-in and connected TrainingPeaks coach addresses from coach-setup. If those are unknown, resolve them before selecting recipients. Never infer the current coach from an owner role or someone else's example.
@@ -132,3 +132,16 @@ the differences before retrying. Never add unsupported `confirm` arguments.
 - **"reconnect TrainingPeaks"**: the coach reconnects TrainingPeaks once in CinchOS (Settings › Integrations).
 - **The connection asks to sign in**, or tools disappear: reconnect the CinchOS connector in Claude's settings.
 - **A tool's answer contradicts this guide**: trust the tool. CinchOS changes faster than this file. Report the mismatch to the plugin maintainer.
+
+
+### Blog articles (cinchos-coaching)
+
+Use [blog-author](../blog-author/SKILL.md) for the complete workflow.
+`list_blog_articles`, `get_blog_article`, `list_blog_authors`, and
+`check_blog_article` need `trainingpeaks:read`. `create_blog_draft`,
+`update_blog_draft`, `add_blog_image`, `review_blog_article` and
+`publish_blog_article` need `coaching:draft` and active blog access. Writers
+work on their own articles; publisher roles can manage all tenant articles.
+Reads expose `version` and `youCan`. Draft writes save immediately; public
+changes require a returned preview, human approval and its `previewToken`.
+A draft, a submission, publication and a verified live page are separate results.
