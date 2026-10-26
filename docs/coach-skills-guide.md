@@ -4,22 +4,48 @@
 
 ## Start here
 
-A skill gives Claude a repeatable set of steps for a coaching job. Choose a skill, describe what you need, and include the athlete, dates or source material relevant to that job. This guide covers 22 skills for coaching, lessons and articles, working with an assistant and preparing documents.
+This guide explains 22 skills with a purpose and example for each. Begin by giving your coaching assistant a permanent work folder.
 
-Use Claude Code in the terminal or the Code area of the Claude desktop app. Open your own work folder, such as `Documents/Coaching`. Keep your instructions and saved work there. The package is available to all coaches through the [public Coach Skills repository](https://github.com/jcavnr-collab/coach-skills).
+1. **Download Claude Desktop.** Get it from [claude.com/download](https://claude.com/download), install it and sign in with your own Claude account. Your plan or organization must include Claude Code access.
+2. **Create a blank folder.** In Documents, make a folder called `Coaching Workspace`. This will hold your skills download, saved instructions, agent memory and work.
+3. **Start a local session.** Open Claude Desktop's **Code** tab. Choose **Local**, then **Open folder** and select `Coaching Workspace`. Keep Worktree off if shown.
 
-### Install and connect
+### Ask your agent to set it up
 
-Run these commands **inside a Claude Code session**, then follow the reload prompt:
+Paste this into the session. Desktop includes the Code agent; it can install the separate command-line tool (CLI) for you if needed.
 
 ```text
-/plugin marketplace add jcavnr-collab/coach-skills
-/plugin install cinch-coach@coach-skills
+Set up this folder as my coaching workspace.
+Download the complete repository into coach-skills/:
+https://github.com/jcavnr-collab/coach-skills
+Read coach-skills/docs/agent-setup.md and follow it.
+Install the Claude Code CLI if needed, install the skills,
+and prepare local memory and agent handoff files.
+Keep existing files. Tell me when to open a new session.
 ```
 
-Open `/mcp` and sign into the CinchOS connections you need with your own account. Coaching, lesson and email skills require the relevant service access. Local assistant and document skills work with files in your work folder. See the repository's [installation instructions](https://github.com/jcavnr-collab/coach-skills#install) for help.
+Follow any installation or folder-access prompts. When setup finishes, choose **New session**, select **Local** and open the **same Coaching Workspace folder**. Continue with the steps on the next page.
 
-Every example below goes into Claude Code. Replace bracketed details with your own.
+## Your coaching workspace
+
+The agent downloads the full repository into a `coach-skills` subfolder. Your personal working files live beside it, so updating the skills preserves your saved context.
+
+| Location in Coaching Workspace | What it holds |
+|---|---|
+| `coach-skills/` | The complete public skills repository and guide |
+| `CLAUDE.md` | Your working instructions and which memory files to read |
+| `MEMORY.md` | Saved preferences and decisions you want carried forward |
+| `Agents/` | Named assistants' briefs, current work and handoffs |
+
+These are files you can read and back up. Claude also maintains its own automatic memory separately. A fresh chat resumes from the files it reads; it does not inherit the previous conversation.
+
+### Finish setup in the new session
+
+Ask: **"Read CLAUDE.md and MEMORY.md, check that Coach Skills is loaded, then help me run coach-setup."** Ask the agent to guide CinchOS sign-in with your own account. In a terminal session, use `/mcp`. Service access comes from your account.
+
+Keep opening `Coaching Workspace` for future sessions. To continue a named assistant, ask it to read its saved brief in `Agents/`. [Detailed setup and troubleshooting](https://github.com/jcavnr-collab/coach-skills/blob/main/docs/agent-setup.md) are available in the repository.
+
+In the examples below, replace bracketed details with your own.
 
 ### coach-setup
 
@@ -244,9 +270,9 @@ Both tools run locally. On first use, the assistant checks the renderer and inst
 
 ### Keep your setup working
 
-- **A skill is missing:** open `/plugin`, check that `cinch-coach` is enabled, then follow its reload prompt.
-- **A connection needs sign-in:** open `/mcp` and authenticate your account. A permission error needs the appropriate service access.
+- **A skill is missing:** check Desktop's plugin controls, or `/plugin` in a terminal session. Enable cinch-coach and open a new session.
+- **A connection needs sign-in:** ask the agent to guide authentication, using `/mcp` in a terminal session if needed. A permission error needs the appropriate service access.
 - **A new chat needs context:** give it the saved brief's path and ask it to read back the assignment.
-- **An update is available:** update the marketplace and plugin through `/plugin`, then reload. Keep your personal work in your own folder.
+- **An update is available:** ask your agent to refresh `coach-skills` from GitHub, update the installed plugin and help you reload. Keep personal files in the parent workspace.
 
 For a first session, finish setup, run `sunday-prep`, and preview one athlete's week. Save an `agent-brief` checkpoint before leaving.

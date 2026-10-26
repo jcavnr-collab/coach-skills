@@ -8,7 +8,40 @@ Read the [Coach Skills how-to guide](docs/coach-skills-guide.md), [download the 
 
 ## Install
 
-Run these inside Claude Code:
+1. Download [Claude Desktop](https://claude.com/download), install it and sign in with your own Claude account. Your plan or organization must include Claude Code access.
+2. Create an empty folder in Documents called **Coaching Workspace**.
+3. Open Desktop's **Code** tab, choose **Local**, then **Open folder**, and select that folder. Keep Worktree off if shown. Desktop includes the Code agent, so you can begin before installing the separate CLI.
+4. Paste this message:
+
+~~~text
+Set up this folder as my coaching workspace.
+Download the complete repository into coach-skills/:
+https://github.com/jcavnr-collab/coach-skills
+Read coach-skills/docs/agent-setup.md and follow it.
+Install the Claude Code CLI if needed, install the skills,
+and prepare local memory and agent handoff files.
+Keep existing files. Tell me when to open a new session.
+~~~
+
+5. Follow any installation or folder-access prompts. When the agent finishes, choose **New session**, select **Local** and reopen the **same Coaching Workspace folder**.
+6. Ask: **"Read CLAUDE.md and MEMORY.md, check that Coach Skills is loaded, then help me run coach-setup."** Ask the agent to guide CinchOS sign-in with your own account. In a terminal session, use `/mcp`.
+
+The agent handles the download and installation. You complete sign-in. The [agent setup reference](docs/agent-setup.md) includes official CLI installers, download options, verification and recovery steps. Local installation applies to this computer; repeat setup on another computer.
+
+### One folder for your coaching work
+
+| Location in Coaching Workspace | Purpose |
+|---|---|
+| `coach-skills/` | Complete public repository download, including skills and docs |
+| `CLAUDE.md` | Working instructions, with links to your saved context |
+| `MEMORY.md` | Your saved preferences and decisions |
+| `Agents/` | Named assistants' briefs and handoffs |
+
+Open the parent **Coaching Workspace** folder for every coaching session. Keep a private backup. Personal files stay outside the public `coach-skills` checkout, so updating the repository preserves them. Claude's own automatic memory is separate; this folder holds the explicit working context you ask your agents to save and read.
+
+### Manual alternative
+
+Run these **inside a terminal Claude Code session**:
 
 ~~~text
 /plugin marketplace add jcavnr-collab/coach-skills
@@ -28,11 +61,11 @@ Follow the reload prompt, then start with:
 /cinch-coach:coach-setup
 ~~~
 
-Setup records your own coach identity, connected accounts, planning day, time zone and preferences in your local work instructions. Keep that folder separate from the plugin download.
+Setup records your own coach identity, connected accounts, planning day, time zone and preferences in your local work instructions. Preserve the workspace's memory and handoff instructions when updating them.
 
 In Claude Desktop, use the Code tab's plugin management controls to add the same marketplace. This package is for Claude Code; adding a connector to a regular chat does not install these skills. See [Claude's installation guide](https://code.claude.com/docs/en/discover-plugins).
 
-Already using another cinch-coach installation? Disable the older copy through /plugin before enabling this marketplace's copy. Keep your personal instructions and agent briefs.
+Already using another cinch-coach installation? Use Desktop's plugin controls, or /plugin in the terminal interface, to disable the older copy before enabling this marketplace's copy. Keep your personal instructions and agent briefs.
 
 ## Skills
 
@@ -73,7 +106,7 @@ The plugin includes these MCP server addresses:
 - Coaching: https://os.cinchcycling.com/api/mcp/coaching
 - Inbox: https://os.cinchcycling.com/api/mcp/inbox
 
-Run /mcp in Claude Code and sign into each needed connection with your own CinchOS account. Never share another coach's login or put credentials in this repository. An owner may see a larger roster, but "my athletes" means the current coach's confirmed assignments.
+Ask your agent to guide sign-in with your own CinchOS account. If Desktop's connection controls do not offer it, open a terminal in your workspace, run claude, then use /mcp to authenticate. Reopen Desktop and check the connections there. Never share another coach's login or put credentials in this repository. An owner may see a larger roster, but "my athletes" means the current coach's confirmed assignments.
 
 Skills Studio uses the coaching connection. Its lesson tools are list_skills, get_skill, create_skill_draft and update_skill_draft. Reading requires trainingpeaks:read; draft writes require coaching:draft and active workspace access. Reconnecting cannot grant missing membership. The agent shows the proposed lesson before saving, reads it back, and returns its Studio link. Publication remains a manual Studio action.
 
@@ -142,7 +175,7 @@ Then use /mcp to sign in. This optional connection does not change the Descript 
 
 ## Updates and downloads
 
-Use /plugin to update the coach-skills marketplace and cinch-coach plugin, then follow the reload prompt. Edition 0.9.0 adds blog authoring, review, image imports and confirmed publication through the coaching connection.
+Ask your agent to refresh the public repository, update the coach-skills marketplace and cinch-coach plugin, then help you open a fresh session. The [agent setup reference](docs/agent-setup.md) explains updates for local checkouts and ZIP downloads. Keep your personal files in the parent workspace. Edition 0.9.0 adds blog authoring, review, image imports and confirmed publication through the coaching connection.
 
 A [versioned ZIP](https://github.com/jcavnr-collab/coach-skills/releases/latest) is also available. Extract it, add the extracted folder as a local marketplace with /plugin marketplace add /absolute/path/to/coach-skills-0.9.0, and install cinch-coach@coach-skills.
 
